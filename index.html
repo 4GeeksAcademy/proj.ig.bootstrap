@@ -1,162 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed with Bootstrap</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+    <title>Payment form example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <style>
-        .nav-pill .nav-link{
-            color: grey;
-        }
-        .nav-pill .nav-link.active{
-            color: blue;
-        }
-    </style>
-
-    <nav class="navbar navbar-light bg-light py-3">
-        <div class="container-fluid">
-            <div class="d-flex w-100 justify-content-between">
-                <div>
-                    <i class="fa-brands fa-instagram fa-xl"></i>
-                    <h5 class="d-inline-block fs-5">Instagram</h5>
-                </div>
-                <div class="d-flex align-right justify-content-end">
-                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Create a new post
-                    </button>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-gear"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
-                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="container m-5">
+        <div class="card">
+            <h2 class="p-3 bg-light ">Payment form example</h2>
+            <div class="alert alert-danger m-3 p-3" role="alert">
+                Some fields are missing
             </div>
-        </div>
-    </nav>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Caption:</h6>
-                    <textarea class="form-control" placeholder="Add the caption of your post here"
-                        id="floatingTextarea2"></textarea>
-                    <div class="row p-2">
-                        <button class="col-1 border rounded p-1 m-1 btn-light">
-                            <i class="fa-solid fa-camera"></i>
-                        </button>
-                        <button class="col-1 border rounded p-1 m-1 btn-light">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </button>
+            <div class="p-4">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Card #</label>
+                            <input type="text"  maxlength="16" class="form-control" oninput="this.value = this.value.replace(/\D/g, '')" placeholder="XXXXXXXXXXXXXXXX">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">CVC #</label>
+                            <input type="text" maxlength="3" class="form-control" oninput="this.value = this.value.replace(/\D/g, '')" placeholder="000">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" placeholder="Amount">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Publish</button>
-                </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Your last name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">City</label>
+                            <input type="text" class="form-control" placeholder="Your City">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">State</label>
+                            <select class="form-select">
+                                <option>Pick a state</option>
+                                <option>New York</option>
+                                <option>California</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Postal Code</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column">
+                            <label class="form-label">We accept:</label>
+                            <div class="border p-3 rounded bg-secondary d-flex gap-3">
+                                <input type="radio"  name="paymentMethod" id="mastercard" autocomplete="off">
+                                <label class="btn btn-outline-light" for="mastercard">
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                </label>
+                                <input type="radio" name="paymentMethod" id="visa" autocomplete="off">
+                                <label class="btn btn-outline-light" for="visa">
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                </label>
+                                <input type="radio" name="paymentMethod" id="amazon-pay" autocomplete="off">
+                                <label class="btn btn-outline-light" for="amazon-pay">
+                                    <i class="fa-brands fa-cc-amazon-pay"></i>
+                                </label>
+                                <input type="radio" name="paymentMethod" id="paypal" autocomplete="off">
+                                <label class="btn btn-outline-light" for="paypal">
+                                    <i class="fa-brands fa-cc-paypal"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column col-md-6 col-lg-7">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control w-80" rows="5"></textarea>
+                            <small class="text-muted">Add any notes here.</small>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
-
-    <div class="container-fluid p-2">
-        <ul class="nav nav-pill justify-content-center" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                    role="tab" aria-controls="home" aria-selected="true"><i
-                        class="fa-solid fa-table-cells"></i></a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active overflow-hidden" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="row">
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://rollerstore.es/2136-large_default/rollerblade-lightning-110-blanconegro.jpg" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://www.inercia.com/blog/wp-content/uploads/2022/11/wizzard-skating-854x1024.jpg" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://www.rollersinline.com/16346-large_default/powerslide-next-mustard-125.jpg" class="img-fluid w-100" alt=""></div>
-                </div>
-                <div class="row">
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://cdn.skatepro.com/upload/2024/08/fitness_1_5002.jpg" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://beaviajera.com/wp-content/uploads/2020/10/Barceloneta-48.jpg" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://usaskateshop-com.b-cdn.net/media/catalog/product/p/o/powerslide_racing_skates_core_performance_black_7_4e70.jpg?width=1000&height=1000&store=es&image-type=image" class="img-fluid w-100" alt=""></div>
-                </div>
-                <div class="row">
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://cdn.skatepro.com/upload/2024/08/fitness_4_5004.jpg" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://www.tradeinn.com/f/14010/140108452/powerslide-patines-en-linea-next-miriam-fatmi-pro-100.webp" class="img-fluid w-100" alt=""></div>
-                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://www.slickwillies.co.uk/cdn/shop/files/K2Grid90InlineSkates_1080x.jpg?v=1722623435" class="img-fluid w-100" alt=""></div>
-                </div>
-            </div>
-            <div class="tab-pane fade overflow-hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row my-4">
-                    <div class="col-6 mx-auto border rounded p-0">
-                        <div class="d-flex p-2">
-                            <div class="w-100 fs-4">Beneficios del patinaje en linea</div>
-                            <small class="align-bottom">11/25</small>
-                        </div>
-                        <img style="object-fit: cover;" src="https://www.inercia.com/blog/wp-content/uploads/2022/11/wizzard-skating-854x1024.jpg" class="img-fluid w-100 col-12" alt=""/>
-                        <div class="p-2">
-                            <strong>3296 Likes</strong>
-                            <p>El patinaje de fitness, ya sea en patines en línea o en patines Quad, es una forma divertida y eficaz de mantenerse en forma. Combinando ejercicios cardiovasculares y de fortalecimiento muscular con un aumento de la coordinación y la capacidad de concentración, el patinaje en línea y en quad aporta muchos beneficios para la salud.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col-6 mx-auto border rounded p-0">
-                        <div class="d-flex p-2">
-                            <div class="w-100 fs-4">Hotel vela, ideal!</div>
-                            <small>14/25</small>
-                        </div>
-                        <img style="object-fit: cover;" src="https://beaviajera.com/wp-content/uploads/2020/10/Barceloneta-48.jpg" class="img-fluid w-100 col-12" alt=""/>
-                        <div class="p-2">
-                            <strong>96985 Likes</strong>
-                            <p>El paseo del Hotel Vela (W) es un lugar muy entretenido para ir a patinar, dispone de zona verde para poder sentarte y descansar, sugerentes obstáculos donde los patinadores con un nivel considerable podrán realizar trucos como saltos de distancia, de altura, bajadas de sugerente inclinación, escaleras, escalones, y una zona de wallride.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col-6 mx-auto border rounded p-0">
-                        <div class="d-flex p-2">
-                            <div class="w-100 fs-4">Patina y sonrrie!</div>
-                            <small>21/07</small>
-                        </div>
-                        <img style="object-fit: cover;" src="https://cdn.skatepro.com/upload/2024/08/fitness_4_5004.jpg" class="img-fluid w-100 col-12" alt=""/>
-                        <div class="p-2">
-                            <strong>7564 Likes</strong>
-                            <p>La actividad física puede ayudarte a aumentar la producción de los neurotransmisores del cerebro que nos hacen sentir bien, denominados endorfinas.</p>
-                        </div>
-                    </div>
+            <div class="card bg-light">
+                <div class="d-flex justify-content-end  p-3">
+                    <button type="reset" class="btn btn-secondary me-2">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
